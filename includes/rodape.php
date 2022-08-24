@@ -1,4 +1,6 @@
     <div class="card">
-        <p>Copyrigth - <a href='http: //www.ifsp.edu.br
+        <div class="card-body text-center">
+        <p>Copyrigth - <a href='http: //www.ifsp.edu.br'
                           target='_blank'>IFSP</a></p>
+        </div>
     </div>
