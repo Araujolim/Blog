@@ -143,7 +143,7 @@ string $ordem = null) : array
     foreach ($criterio as $expressao) {
         $dado = $expressao[count($expressao) -1];
 
-        $tipo = gettype($dado) [0];
+        $tipo[] = gettype($dado) [0];
         $expressao[count($expressao) -1] = '?';
         $coringa_criterio[] = $expressao;
 
@@ -166,7 +166,6 @@ string $ordem = null) : array
     if(isset($tipo)){
         $comando = ' mysqli_stmt_bind_param($stmt,';
         $comando .= "'" . implode('', $tipo). "'";
-        $comando .= ', $' . implode(', $', array_keys($dados));
         $comando .= ', $' . implode(', $', $campos_criterio);
         $comando .= ');';
 
@@ -182,6 +181,7 @@ string $ordem = null) : array
     }
 
     $_SESSION['errors'] = mysqli_stmt_error_list($stmt);
+   
 
     mysqli_stmt_close($stmt);
 
