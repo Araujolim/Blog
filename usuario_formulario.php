@@ -42,15 +42,19 @@
            ?>
            <h2>Usuário</h2>
            <form method="post" action="core/usuario_repositorio.php">
-               <input type="hidden" name="acao" value="<?php echo empty($id) ? 'insert' : 'update' ?>">
-               <input type="hidden" name="id" value="<?php echo $entidade['id'] ?? '' ?>">
+               <input type="hidden" name="acao" 
+                        value="<?php echo empty($id) ? 'insert' : 'update' ?>">
+               <input type="hidden" name="id" 
+                        value="<?php echo $entidade['id'] ?? '' ?>">
              <div class="form-group">
                 <label for="nome">Nome</label>
-                <input class="form-control" type="text" require="required" id="nome" name="nome" value="<?php echo $entidade['nome'] ?? ''?>">
+                <input class="form-control" type="text"
+                         require="required" id="nome" name="nome" value="<?php echo $entidade['nome'] ?? ''?>">
              </div>
              <div class="form-group">
                 <label for="email">E-mail</label>
-                 <input class="form-control" type="email" require="required" id="email" name="email" value="<?php echo $entidade['email'] ?? ''?>">
+                 <input class="form-control" type="text" 
+                            require="required" id="email" name="email" value="<?php echo $entidade['email'] ?? ''?>">
              </div>
              <?php if(!isset($_SESSION['login'])) : ?>
              <div class="form-group">
@@ -59,7 +63,8 @@
              </div>
              <?php endif; ?>
              <div class="text-right">
-                <button class="btn bnt-dark" type="submit">Salvar</button>
+                <button class="btn bnt-success"
+                        type="submit">Salvar</button>
              </div>
            </form>
            </div>
